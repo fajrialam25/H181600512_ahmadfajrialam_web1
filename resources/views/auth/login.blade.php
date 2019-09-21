@@ -47,6 +47,26 @@
                                 @enderror
                             </div>
                         </div>
+
+
+                        <div class="form-group row">
+                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('Captcha') }}</label>
+
+                            <div class="col-md-6">
+                                <div class="captcha">
+                                    <span>{!! captcha_img() !!}</span>
+                                    <button type="submit" class="btn btn-success btn-refersh" onclick="refreshCaptcha()">Refresh</button>
+                                </div>    
+                                
+                                    <input id="captcha" type="text" class="form-control mt-2 @error('captcha') is-invalid @enderror" name="captcha" placeholder="Enter Captcha">
+                                
+                                @error('captcha')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
                                 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
