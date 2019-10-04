@@ -53,6 +53,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'contact' => ['required', 'string', 'max:12' ],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'captcha' =>['required', 'captcha'],
         ]);
     }
 
@@ -70,5 +71,9 @@ class RegisterController extends Controller
             'contact' => $data['contact'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+        public function refreshCaptcha()
+    {
+    return captcha_img('flat');
     }
 }

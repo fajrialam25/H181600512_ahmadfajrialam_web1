@@ -75,7 +75,7 @@
                             <div class="col-md-6">
                                 <div class="captcha">
                                     <span>{!! captcha_img() !!}</span>
-                                    <button type="submit" class="btn btn-success btn-refersh" onclick="refreshCaptcha()">Refresh</button>
+                                    <button type="submit" class="btn btn-success btn-refersh"><a style="text-decoration:none;color:white" href="{{route('register')}}">Refresh</a></button>
                                 </div>    
                                 
                                     <input id="captcha" type="text" class="form-control mt-2 @error('captcha') is-invalid @enderror" name="captcha" placeholder="Enter Captcha">

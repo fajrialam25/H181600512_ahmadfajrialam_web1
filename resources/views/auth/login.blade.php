@@ -15,7 +15,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-con trol @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -55,7 +55,7 @@
                             <div class="col-md-6">
                                 <div class="captcha">
                                     <span>{!! captcha_img() !!}</span>
-                                    <button type="submit" class="btn btn-success btn-refersh" onclick="refreshCaptcha()">Refresh</button>
+                                    <button type="submit" class="btn btn-success btn-refersh"><a style="text-decoration:none;color:white" href="{{route('login')}}"> Refresh</a></button>
                                 </div>    
                                 
                                     <input id="captcha" type="text" class="form-control mt-2 @error('captcha') is-invalid @enderror" name="captcha" placeholder="Enter Captcha">
