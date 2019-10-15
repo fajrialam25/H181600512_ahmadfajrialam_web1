@@ -8,12 +8,15 @@
                 <div class="card-header">Liat Kategori Pengumuman</div>
 
                 <div class="card-body">
+                <a href="{!! route('kategori_pengumuman.create') !!}" class="btn btn-primary">Tambah Data</a>
+
                 <table Border="1">
     <tr>
-    <td>ID</td>
+    <td>ID</td>s
     <td>Nama</td>
     <td>Users</td>
     <td>Create</td>
+    <td>Aksi</td>
   </tr>
   @foreach($listKategoriPengumuman as $item)
   <tr>
@@ -21,7 +24,11 @@
     <td>{!! $item->nama !!}</td>
     <td>{!! $item->users_id !!}</td>
     <td>{!! $item->created_at ->format('d/M/Y H:i:s')!!}</td>
+    <td>
+    <a href="{!! route('kategori_pengumuman.show',[$item->id]) !!}" class="btn btn-sm btn-success">Lihat</a>
+    </td>
   </tr>
+  
   @endforeach
     </table>
                    </div>

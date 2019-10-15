@@ -20,7 +20,7 @@ class CreateGaleriTable extends Migration {
             $table->string('path');
 			$table->bigInteger('users_id')->unsigned()->index('fk_galeri_users_idx');
 			$table->timestamps();
-			$table->integer('kategori_galeri_id')->unsigned()->index('fk_galeri_kategori_berita1_idx');
+			$table->integer('kategori_galeri_id')->unsigned()->index('fk_galeri_kategori_berita1_idx'); 
 		});
 	}
 

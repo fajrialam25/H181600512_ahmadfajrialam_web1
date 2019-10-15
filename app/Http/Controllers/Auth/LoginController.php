@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -36,13 +37,13 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    protected function create(array $data)
+    protected function validateLogin(Request $request)
     {
-        return User::create([
-            'name' =>$data['name'],
-            'email' =>$data['email'],
-            'contact' =>$data['contact'],
-            'password' => Hash::make($data['password']),
+        $request->validate([
+            $this->username()=>'required|string',
+            'password' =>'required|string',
+            'captcha' =>'required|captcha',
+
         ]);
     }
     public function refreshCaptcha()
@@ -51,4 +52,6 @@ class LoginController extends Controller
     } 
 
 }
+
+
 
